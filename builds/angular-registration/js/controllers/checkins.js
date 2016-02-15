@@ -22,6 +22,12 @@ myApp.controller('CheckInsController', ['$scope', '$rootScope', '$location', '$f
        $location.path('/checkins/' + $scope.whichuser + '/' + $scope.whichmeeting + '/checkinsList');
      });
 
-   }
+   };
+
+   $scope.deleteCheckin = function(id) {
+     var refDel = new Firebase(FIREBASE_URL + 'users/' + $scope.whichuser + '/meetings/' + $scope.whichmeeting + '/checkins/' + id);
+     var record = $firebaseObject(refDel);
+     record.$remove(id);
+   };
 
  }]);
