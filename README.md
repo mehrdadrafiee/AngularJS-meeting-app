@@ -1,6 +1,6 @@
 # AngularJS registration
 
-Added registration functionality to an [AngularJS](https://angularjs.org/) app that takes place in [Firebase](https://firebase.com/). Other technologies that are used in this project are as follow:
+A minimalist check-in to meeting [AngularJS](https://angularjs.org/) app that uses [Firebase](https://firebase.com/) to store/retrieve users' information. Other technologies that are used in this project are as follow:
 
 - [Sass](http://sass-lang.com/)
 - [Gulp](http://gulpjs.com/)
