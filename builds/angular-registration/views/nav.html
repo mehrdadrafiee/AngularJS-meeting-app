@@ -1,5 +1,9 @@
   <div class="branding"><a ng-href="#/">angularJS</a></div>
   <ul>
+    <li>
+      <a href="#/meetings" ng-show="currentUser">Meetings
+        <span ng-show="howManyMeetings" class="badge">{{ howManyMeetings }}</span>
+    </li>
     <li><a ng-href="#/login" ng-hide="currentUser">Login</a></li>
     <li><a ng-href="#/register" ng-hide="currentUser">Register</a></li>
   </ul>
