@@ -6,6 +6,6 @@ Added registration functionality to an [AngularJS](https://angularjs.org/) app t
 - [Gulp](http://gulpjs.com/)
 - [ngRoute](https://docs.angularjs.org/api/ngRoute)
 - [ngAnimate](https://docs.angularjs.org/api/ngAnimate)
+- [Font Awesome](https://fortawesome.github.io/Font-Awesome/)
 
-![Alt text](builds/angular-registration/img/Screenshot.png "Form screen shot")
-![Alt text](builds/angular-registration/img/screenshot2.png "Form screen shot")
+![Alt text](builds/angular-registration/img/screenshot.png "Form screen shot")
