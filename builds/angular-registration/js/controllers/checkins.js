@@ -12,6 +12,7 @@ myApp.controller('CheckInsController', ['$scope', '$rootScope', '$location', '$f
    $scope.order = "firstname";
    $scope.direction = null;
    $scope.query = '';
+   $scope.recordId = '';
 
    $scope.addCheckin = function() {
      var checkinsInfo = $firebaseArray(ref);
@@ -32,6 +33,12 @@ myApp.controller('CheckInsController', ['$scope', '$rootScope', '$location', '$f
      var refDel = new Firebase(FIREBASE_URL + 'users/' + $scope.whichuser + '/meetings/' + $scope.whichmeeting + '/checkins/' + id);
      var record = $firebaseObject(refDel);
      record.$remove(id);
+   };
+
+   //Pick the winner
+   $scope.pickRandom = function() {
+     var whichRecord = Math.round(Math.random() * (checkinsList.length - 1));
+     $scope.recordId = checkinsList.$keyAt(whichRecord);
    };
 
  }]);
