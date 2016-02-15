@@ -32,19 +32,28 @@
   </div>
 
   <ul class="userlist cf">
-    <li ng-repeat="checkin in checkins | orderBy: order:direction | filter: { $id: recordId, $: query } ">
+    <li ng-class="checkin.userState" ng-repeat="checkin in checkins | orderBy: order:direction | filter: { $id: recordId, $: query } ">
       <div class="checkin">
         <div class="buttons" ng-show="currentUser">
           <button class="btn btn-delete tooltip" ng-click="deleteCheckin(checkin.$id)">
             <span>Delete this check-in</span><i class="fa fa-trash-o"></i>
           </button>
+          <button class="btn btn-love tooltip" ng-click="showLove(checkin)">
+            <i class="fa fa-heart"></i><span>Show the love</span>
+          </button>
         </div>
 
         <div class="info">
-          <h2>{{checkin.firstname}} {{checkin.lastname}}</h2>
+          <h2>{{ checkin.firstname }} {{ checkin.lastname }}</h2>
           <div class="date">
-            {{ checkin.date | date: "MM d, yy h:mm a" }}
+            {{ checkin.date | date: "MMMM dd, yyyy | HH:mm" }}
           </div>
+        </div>
+        <div class="showcheckins" ng-show="checkin.show">
+          <form class="cf" ng-submit="giveLove(checkin, checkin.giftText)" novalidate>
+            <input type="text" name="giftText" placeholder="What are you giving them?" ng-model="checkin.giftText" ng-required="true">
+            <button type="submit" class="btn" ng-disabled="myform.$invalid">+</button>
+          </form>
         </div>
       </div>
     </li>
